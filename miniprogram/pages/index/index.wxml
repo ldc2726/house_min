@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='head'>
+    <view class='cityName' bindtap='city_index'><i-icon type="coordinates_fill" />{{city}}</view>
+    <van-search
+      class='addSearch'
+      value="{{ searchValue }}"
+      placeholder="你想住哪？"
+      show-action
+      bind:change="onSearch"
+      bind:cancel="onCancel"
+    />
+    <!-- <open-data type="userProvince"></open-data>
+    <image src='{{avatarUrl}}'></image>
+    {{userInfo}} -->
+  </view>
+  <wxs module="m1">
+    var msg = function(val){
+      if(val.length>22){
+        return val.substring(0,22)+'...'
+      }else{
+        return val
+      }
+    }
+    module.exports.message = msg;
+  </wxs>
+  <view class='content' wx:if="{{cardList.length!=0}}">
+    <view class='cardList' wx:for="{{cardList}}" data-id="{{item._id}}" bindtap='itemDetails' wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+      <van-card
+        tag="new"
+        tag1="2"
+        class="cardListcon"
+        price="{{item.price}}"
+        desc="{{m1.message(item.statement)}}"
+        title="{{item.type}}  {{item.size}}"
+        thumb="{{ item.img[0] }}"
+      >
+        <view slot="bottom">
+          <van-tag plain type="success" 
+            style="margin-right:10rpx" 
+            wx:if="{{item.tag!=undefind&&item.tag.length!=0}}"  
+            wx:key="{{i}}" 
+            wx:for="{{item.tag}}" 
+            wx:for-item="tagItem">
+            {{tagItem}}
+          </van-tag>
+        </view>
+      </van-card>
+    </view>
+  </view>
+  <view wx:else class='content'>
+  抱歉，所在地区暂无数据
+  </view>
+    <button open-type='contact' class='helpMe'>
+      <view class='foot_fixed'>
+      </view>
+      <view>在线咨询</view>
+    </button>
+ 
+
+</view>

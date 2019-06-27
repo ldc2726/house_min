@@ -1,0 +1,107 @@
+/* pages/indexItem/indexItem.wxss */
+.indexItem{
+  width: 100%;
+}
+.indexSwper{
+  height: 300rpx;
+  width: 100%;
+  position: relative;
+}
+.num{
+  position: absolute;
+  bottom: 40rpx;
+  right: 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.slide-image{
+  width: 100%;
+  height: 300rpx;
+}
+.tile{
+  margin-top: 10rpx;
+  overflow: hidden;
+}
+.titleLeft{
+  float: left;
+  margin-left: 38rpx;
+  font-size: 32rpx;
+  margin-top: 18rpx;
+  font-weight: 600;
+}
+.titleRight{
+  float: right;
+  color: #f00;
+  margin-right: 10%;
+  font-size: 34rpx;
+  margin-top: 18rpx;
+}
+.titleRight text{
+  color: #666;
+  font-size: 28rpx;
+}
+/*------- basic----------- */
+.basic{
+  height: 100rpx;
+  width: 100%;
+  border-top: 2rpx solid #f1f1f1;
+  border-bottom: 2rpx solid #f1f1f1;
+  display: flex;
+  margin-top: 20rpx;
+}
+.list{
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.listNum{
+  font-size: 30rpx;
+  color: #333;
+}
+/* ----------tag-------- */
+.tag{
+  height: 60rpx;
+  border-bottom: 3rpx solid #f1f1f1;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+/* ---------map---------- */
+.address{
+  font-size: 34rpx;
+  line-height: 80rpx;
+  font-weight: 600;
+  text-indent: 38rpx;
+}
+#myMap{
+  position: relative;
+}
+/* ------introduce------ */
+.introduce{
+  font-size: 34rpx;
+  line-height: 80rpx;
+  font-weight: 600;
+  margin-bottom: 100rpx;
+}
+.introduceTitle{
+  text-indent: 38rpx;
+}
+.content{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  box-sizing: border-box;
+  padding: 0 38rpx;
+  font-weight: 400;
+}
+/* ---------foot------- */
+.foot{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}

@@ -1,0 +1,22 @@
+<!--commen/cityIndex/cityIndex.wxml-->
+<!-- <text>commen/cityIndex/cityIndex.wxml</text> -->
+<view class='cityIndex'>
+<i-index height="100%" bind:change="onChange">
+        <i-index-item 
+            wx:for="{{ cityArray }}" 
+            wx:for-index="index" 
+            wx:key="{{index}}" 
+            wx:for-item="item" name="{{item.title}}">
+            <view 
+                class="i-index-demo-item" 
+                wx:for="{{item.lists}}" 
+                wx:for-index="in" 
+                wx:key="{{in}}" 
+                data-url="{{it}}"
+                bindtap='routerIndex'
+                wx:for-item="it">
+                {{it}}
+            </view>
+        </i-index-item>
+    </i-index>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/userConsole/userConsole.wxml-->
+<van-notice-bar
+  left-icon="volume-o"
+  text="相关功能暂未开通，我们正在积极开发中,尽请期待......"
+/>
+<view class="container">
+  <!-- 云开发用户管理指引 -->
+  <!-- <view class="guide">
+    <text class="p">暂未开通</text>
+  </view> -->
+
+</view>

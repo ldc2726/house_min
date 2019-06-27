@@ -1,0 +1,27 @@
+/**likeHous.wxss**/
+.container{
+  background: #f5f5f5;
+}
+
+.content{
+  width: 100%;
+}
+.cardList{
+  width: 100%;
+  background: #fff;
+}
+.cardList .van-card{
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  display: inline-block;
+  font-size: 30rpx;
+  width: 80px;
+  line-height: 200rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}

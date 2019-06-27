@@ -1,0 +1,85 @@
+<!--pages/indexItem/indexItem.wxml-->
+<view class='indexItem'>
+  <view class='indexSwper'>
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" indicator-dots='true' circular='true' interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{pageData.img}}" wx:for-index="index" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="100%" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class='num'>已有{{pageData.seeCount}}人访问</text>
+  </view>
+  <view class='tile'>
+    <view class='titleLeft'>{{pageData.type}} {{pageData.size}}</view>
+    <view class="titleRight">￥{{pageData.price}} · <text>{{pageData.payType}}</text></view>
+    <!-- <view class='titleRight'><text>收藏：</text>
+      <van-icon wx:if="{{likeStar}}" name="like" bindtap='focusOn' />
+      <van-icon wx:else name="like-o" bindtap='focusOn' />
+    </view> -->
+  </view>
+  <!-- basic -->
+  <view class='basic'>
+    <view class='list'>
+      <view class='listNum'>{{pageData.size}}</view>
+      <view>房型</view>
+    </view>
+    <view class='list'>
+      <view class='listNum'>{{pageData.area}}</view>
+      <view>面积</view>
+    </view>
+    <view class='list'>
+      <view class='listNum'>{{pageData.housBearing}}</view>
+      <view>朝向</view>
+    </view>
+    <view class='list'>
+      <view class='listNum'>{{pageData.floor}}层</view>
+      <view>楼层</view>
+    </view>
+  </view>
+  <!-- tag -->
+  <view class='tag'>
+    <van-tag plain type="success" size="medium"
+        style="margin-right:10rpx;margin-left:10rpx;" 
+        wx:if="{{pageData.tag!=undefind&&pageData.tag.length!=0}}"  
+        wx:key="{{i}}" 
+        wx:for="{{pageData.tag}}" 
+        wx:for-item="tagItem">
+        {{tagItem}}
+      </van-tag>
+  </view>
+  <!-- map -->
+  <view class='address'>{{pageData.city}}{{pageData.addr}}</view>
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 94%;margin:0 auto;z-index:2;height: 300rpx;"
+      latitude="{{pageData.latitude}}"
+      longitude="{{pageData.longitude}}"
+      markers="{{pageData.markers}}"
+      zIndex="1"
+      show-location
+    >
+    </map>
+  </view>
+  <!-- introduce -->
+  <view class='introduce'>
+    <view class='introduceTitle'>介绍：</view>
+    <view class='content'>{{pageData.statement}}</view>
+  </view>
+<!-- <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button> -->
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">22222222</button> -->
+<!-- <button open-type="share">分享</button> -->
+<view class='foot'>
+  
+  <van-goods-action-icon icon="share" open-type="share" text="分享" />
+  <van-goods-action-icon icon="like-o" bindtap='likeRoute' text="我的关注" info="{{likeArray.length}}"/>
+  <!-- <van-goods-action-icon icon="shop-o" text="店铺" /> -->
+  <van-goods-action-button text="已关注" type="warning" wx:if="{{likeStar}}" disabled/>
+  <van-goods-action-button text="关注" type="warning" wx:else   bindtap='focusOn'/>
+  <van-goods-action-button open-type='contact' text="立即沟通" send-message-title="商品" send-message-img="{{pageData.img[0].pic_url}}" send-message-path="/pages/indexItem/indexItem?id={{pageData._id}}" show-message-card='true'/>
+</view>
+  <van-dialog id="van-dialog" />
+  <view><van-toast id="van-toast" /></view>
+</view>

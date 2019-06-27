@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的关注",
+  "usingComponents": {
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "i-icon": "/iview/icon/index",
+    "van-card": "/miniprogram_npm/vant-weapp/card/index",
+    "van-tag": "/miniprogram_npm/vant-weapp/tag/index",
+    "van-swipe-cell": "/miniprogram_npm/vant-weapp/swipe-cell/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index"
+  }
+}

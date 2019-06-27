@@ -1,0 +1,13 @@
+<!--pages/databaseGuide/databaseGuide.wxml-->
+<van-notice-bar
+  left-icon="volume-o"
+  text="大波功能暂未开通，我们正在积极开发中,尽请期待......"
+/>
+<view class="my">
+  <view class='myList1' bindtap='routeLike'>
+    <van-icon name="like" class='like' style='color:red;font-size:36rpx;' />
+    <view class='myContent'>我的关注（{{likeLength}}）</view>
+    <van-icon name='arrow'></van-icon>
+  </view>
+  
+</view>

@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <wxs module="m1">
+    var msg = function(val){
+      if(val.length>22){
+        return val.substring(0,22)+'...'
+      }else{
+        return val
+      }
+    }
+    module.exports.message = msg;
+  </wxs>
+  <view class='content'>
+    <view class='cardList' wx:for="{{cardList}}" data-id="{{item._id}}" wx:for-index="index" wx:key="{{index}}" wx:for-item="item">
+      <van-swipe-cell right-width="{{ 80 }}" left-width="{{ 0 }}"  data-id="{{item._id}}" bind:click='itemDetails'  bindtap='itemDetails'>
+        <van-card
+          tag="new"
+          tag1="2"
+          class="cardListcon"
+          price="{{item.price}}"
+          desc="{{m1.message(item.statement)}}"
+          title="{{item.type}}  {{item.size}}"
+          thumb="{{ item.img[0] }}"
+        >
+          <view slot="bottom">
+            <van-tag plain type="success" 
+              style="margin-right:10rpx" 
+              wx:if="{{item.tag!=undefind&&item.tag.length!=0}}"  
+              wx:key="{{i}}" 
+              wx:for="{{item.tag}}" 
+              wx:for-item="tagItem">
+              {{tagItem}}
+            </van-tag>
+          </view>
+        </van-card>
+         <view slot="right">取消关注</view>
+      </van-swipe-cell>
+      <van-dialog id="van-dialog" />
+    </view>
+  </view>
+</view>
